@@ -15,7 +15,7 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 // Reuse that template for creating different stories
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = { variant: "primary", text: "CLICK ME", size: "medium" };
 
 export const Secondary = Template.bind({});
-Secondary.args = {};
+Secondary.args = { variant: "secondary", text: "CLICK ME", size: "medium" };

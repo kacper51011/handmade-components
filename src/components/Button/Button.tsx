@@ -33,7 +33,6 @@ const Button: FC<ButtonProps> = ({
       size={size}
       sharpness={sharpness}
       variant={variant}
-      // color={color}
       {...props}
     >
       {text}
