@@ -1,25 +1,25 @@
-import React, { Children, FC } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
-import Button from "../Button";
 import { ListProps } from "./List.types";
 
 const StyledList = styled.div<ListProps>`
   display: flex;
-  justify-content: ${({ justifyContent }) => justifyContent + ";"}
-  align-items: ${({ alignItems }) => alignItems + ";"}
-  flex-direction: ${({ direction }) => (direction ? direction + ";" : "row;")} 
-    
-    > * {
-    background-color: yellow;
-    
+  justify-content: ${({ justifyContent }) => justifyContent || "center"};
+  align-items: ${({ alignItems }) => alignItems || "center"};
+  flex-direction: ${({ direction }) => (direction ? direction : "row")};
+
+  > * {
     ${({ direction, gap }) =>
       direction === "row" &&
-      `margin-left: ${gap * 0.25}rem;` &&
-      `margin-right: ${gap * 0.25}rem;`}
+      gap &&
+      `margin-left: ${gap * 0.25}rem` &&
+      `margin-right: ${gap * 0.25}rem`};
     ${({ direction, gap }) =>
       direction === "column" &&
+      gap &&
       `margin-top: ${gap * 0.25}rem;` &&
       `margin-bottom: ${gap * 0.25}rem;`}
+  }
 `;
 
 const List: FC<ListProps> = ({
