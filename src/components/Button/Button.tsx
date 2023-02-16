@@ -5,18 +5,20 @@ import { ButtonProps } from "./Button.types";
 const StyledButton = styled.button<ButtonProps>`
   ${({ fullWidth }) => fullWidth && "width:100%;"}
   padding: ${({ size }) =>
-    (size === "small" && "0.35rem 0.8rem;") ||
-    (size === "medium" && "0.55rem 1.4rem;") ||
-    (size === "large" && "1rem 3rem;")}
+    (size === "small" && "0.35rem 0.8rem") ||
+    (size === "medium" && "0.55rem 1.4rem") ||
+    (size === "large" && "1rem 3rem")};
   background: ${({ color, variant }) =>
-    (color && color + ";") ||
-    (variant === "primary" && "#00e676;") ||
-    (variant === "secondary" && "#ffea00;")}
-  border-radius: ${({ sharpness }) =>
-    sharpness === "primary" ? "4px;" : "16px;"}
-    font-family: Arial, Helvetica, sans-serif;
+    (variant !== "outlined" && color) ||
+    (variant === "primary" && "#00e676") ||
+    (variant === "secondary" && "#ffea00") ||
+    (variant === "outlined" && "#fafafa")};
 
-  border: 0;
+  border-radius: ${({ sharpness }) =>
+    sharpness === "primary" ? "4px;" : "16px"};
+  font-family: Arial, Helvetica, sans-serif;
+  border-width: ${({ variant }) => variant !== "outlined" && 0};
+  border-color: ${({ color }) => color || "#00e676"};
   font-weight: 700;
 `;
 const Button: FC<ButtonProps> = ({

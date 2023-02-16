@@ -6,7 +6,7 @@ export default {
   title: "Components/Button",
   component: Button,
   argTypes: {
-    textColor: { control: "color" },
+    color: { control: "color" },
   },
 } as ComponentMeta<typeof Button>;
 
@@ -19,3 +19,6 @@ Primary.args = { variant: "primary", text: "CLICK ME", size: "medium" };
 
 export const Secondary = Template.bind({});
 Secondary.args = { variant: "secondary", text: "CLICK ME", size: "medium" };
+
+export const Outlined = Template.bind({});
+Outlined.args = { variant: "outlined", text: "CLICK ME", size: "medium" };

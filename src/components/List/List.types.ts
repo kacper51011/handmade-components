@@ -1,10 +1,5 @@
-import { ComponentPropsWithRef, PropsWithChildren } from "react";
-import {
-  CSSProp,
-  CSSProperties,
-  StyledComponentPropsWithRef,
-  StyledProps,
-} from "styled-components";
+import { PropsWithChildren } from "react";
+import { CSSProperties, StyledComponentPropsWithRef } from "styled-components";
 
 export type ListProps = PropsWithChildren & {
   direction?: "row" | "column";

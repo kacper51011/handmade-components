@@ -48,7 +48,6 @@ const Template: ComponentStory<typeof Navbar> = (args) => (
 export const Desktop = Template.bind({});
 Desktop.args = {
   variant: "desktop",
-  style: { display: "flex", justifyContent: "space-between" },
 };
 
 export const Mobile = Template.bind({});
